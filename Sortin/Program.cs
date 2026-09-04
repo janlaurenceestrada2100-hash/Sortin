@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Sortin //bubbe Sort
+namespace Sortin //exhange sort
 {
     class Program
     {
@@ -23,20 +23,18 @@ namespace Sortin //bubbe Sort
                 Console.ReadKey();
             }
         }
-        //Perform the bubble sort algorithm
+        //Perform the exchange sort algorithm
         public static void sort(int[] arr)
         {
-            int n = arr.Length;
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = 0; j < n - i - 1; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[j] > arr[j + 1])
+                    if (arr[i] > arr[j])
                     {
-                        // swap temp and arr[i]
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
                     }
                 }
                 printArray(arr);
@@ -50,6 +48,7 @@ namespace Sortin //bubbe Sort
                 Console.Write(arr[i] + " | ");
             Console.WriteLine();
         }
+
 
 
     }
